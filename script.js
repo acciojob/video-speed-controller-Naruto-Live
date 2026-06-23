@@ -1,10 +1,13 @@
-const video = document.querySelector('.viewer');
+const video = document.querySelector('.player__video');
 const toggle = document.querySelector('.toggle');
 const progressFilled = document.querySelector('.progress__filled');
 const progress = document.querySelector('.progress');
 const volume = document.querySelector('.volume');
 const playbackSpeed = document.querySelector('.playbackSpeed');
 const skipButtons = document.querySelectorAll('[data-skip]');
+const rewind = document.querySelectorAll('.rewind');
+const forward = document.querySelectorAll('.forward');
+
 
 function togglePlay() {
   if (video.paused) {
@@ -51,8 +54,13 @@ video.addEventListener('timeupdate', handleProgress);
 volume.addEventListener('input', handleVolume);
 playbackSpeed.addEventListener('input', handleSpeed);
 
-skipButtons.forEach(button =>
-  button.addEventListener('click', skip)
-);
-
 progress.addEventListener('click', scrub);
+
+
+rewind.addEventListener('click' , () => {
+	video.currentTime -= 10;
+});
+
+forward.addEventListener('click' , () => {
+	video.currentTime += 25;
+});
