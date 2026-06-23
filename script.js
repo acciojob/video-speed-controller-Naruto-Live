@@ -5,8 +5,8 @@ const progress = document.querySelector('.progress');
 const volume = document.querySelector('.volume');
 const playbackSpeed = document.querySelector('.playbackSpeed');
 const skipButtons = document.querySelectorAll('[data-skip]');
-const rewind = document.querySelectorAll('.rewind');
-const forward = document.querySelectorAll('.forward');
+const rewind = document.querySelector('.rewind');
+const forward = document.querySelector('.forward');
 
 
 function togglePlay() {
